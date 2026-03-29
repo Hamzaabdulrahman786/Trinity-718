@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trinity 718 | Strategic Partner for Venture-Scale Growth</title>
+  <meta name="description" content="Elite financial advisory for founders, operators, and VCs. Bridge innovation with institutional-grade discipline.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'navy-900': '#001A2D',
+            'emerald-500': '#10B981',
+            'off-white': '#F8FAFC',
+          },
+          backdropBlur: { xs: '2px' }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS: Smooth Scroll, Custom Cursor, Mesh Gradients -->
+  <style>
+    html { 
+      scroll-behavior: smooth; 
+    }
+    * { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='15 18 9 12 15 6'></polyline></svg>") 12 12, auto; }
+    .mesh-gradient {
+      background: radial-gradient(circle at 20% 80%, rgba(16,185,129,0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(0,26,45,0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 40% 40%, rgba(248,250,252,0.3) 0%, transparent 50%);
+    }
+    .glass-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 25px 45px -15px rgba(0,0,0,0.1);
+    }
+    .core-values-card {
+      transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 20s linear infinite;
+    }
+    .animate-pulse-slow {
+      animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    .emerald-glow {
+      box-shadow: 0 0 20px rgba(16,185,129,0.4);
+    }
+    .btn-emerald {
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    }
+  </style>
+  
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-inter bg-white text-slate-600 antialiased">
+  
+  <!-- Navbar -->
+  <div data-include="navbar.html"></div>
+  
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden mesh-gradient px-4 sm:px-6 lg:px-8 py-10" style="min-height: calc(100svh - 88px);" data-aos="fade-up" data-aos-duration="1200">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-24 -right-20 w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-28 -left-24 w-80 h-80 bg-navy-900/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10 h-full grid lg:grid-cols-2 gap-10 items-center">
+      <div class="text-center lg:text-left" data-aos="fade-right" data-aos-delay="100">
+        <p class="inline-flex items-center rounded-full border border-emerald-500/30 bg-white/70 px-4 py-2 text-xs sm:text-sm font-semibold text-navy-900 mb-6">
+          Strategic Finance for Growth-Stage Teams
+        </p>
+        <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 mb-5 leading-tight">
+          Finance Leadership That Scales With Your Ambition
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+          We help founders move faster with investor-ready models, clear runway visibility, and practical operating plans.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="contact.html" class="inline-flex items-center justify-center font-semibold text-base px-8 py-4 rounded-xl btn-emerald text-white hover:scale-105 transition-all duration-300 emerald-glow shadow-xl">
+            Book Discovery Call
+          </a>
+          <a href="services.html" class="inline-flex items-center justify-center font-semibold text-base px-8 py-4 rounded-xl border border-slate-300 text-navy-900 bg-white/80 hover:bg-white transition-colors">
+            Explore Services
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white/90 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 shadow-2xl" data-aos="fade-left" data-aos-delay="220">
+        <h2 class="font-bold text-2xl text-navy-900 mb-6">Why founders choose Trinity 718</h2>
+        <ul class="space-y-4 text-slate-600">
+          <li class="flex items-start gap-3">
+            <span class="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+            <span>Investor-ready reporting and board narratives without enterprise overhead.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+            <span>Decision-grade financial models that support pricing, hiring, and runway planning.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+            <span>Hands-on partnership from strategy through execution.</span>
+          </li>
+        </ul>
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <p class="text-sm text-slate-500 mb-1">Avg. Engagement Start</p>
+            <p class="text-2xl font-bold text-navy-900">10 Days</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <p class="text-sm text-slate-500 mb-1">Leadership Access</p>
+            <p class="text-2xl font-bold text-navy-900">Direct</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Value Proposition Section -->
+  <section class="py-32 bg-off-white" data-aos="fade-up" data-aos-delay="100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-24">
+        <h2 class="font-bold text-4xl md:text-5xl text-navy-900 mb-6">Approachable Professionalism</h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">Tier-1 Wall Street expertise delivered without the stuffy corporate friction. We're in your corner, speaking your language.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-10 rounded-3xl hover:-translate-y-4 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="0">
+          <div class="w-20 h-20 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+            <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <h3 class="font-bold text-2xl text-navy-900 mb-4">Founder-First Mindset</h3>
+          <p class="text-slate-600 leading-relaxed">We prioritize your vision and execution speed above traditional gatekeeping.</p>
+        </div>
+        
+        <div class="glass-card p-10 rounded-3xl hover:-translate-y-4 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-20 h-20 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+            <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="font-bold text-2xl text-navy-900 mb-4">Data-Driven Decisions</h3>
+          <p class="text-slate-600 leading-relaxed">Uncompromising financial intelligence powered by proprietary modeling frameworks.</p>
+        </div>
+        
+        <div class="glass-card p-10 rounded-3xl hover:-translate-y-4 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="400">
+          <div class="w-20 h-20 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+            <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+          </div>
+          <h3 class="font-bold text-2xl text-navy-900 mb-4">Radical Transparency</h3>
+          <p class="text-slate-600 leading-relaxed">Every assumption, projection, and recommendation backed by auditable data trails.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Ultimate Core Values Section -->
+  <section class="relative py-32 overflow-hidden" style="background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%);" data-aos="fade-up">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-1/4 left-10 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-20 w-72 h-72 bg-slate-200/30 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center mb-24" data-aos="fade-down">
+        <h2 class="font-black text-5xl md:text-6xl lg:text-7xl text-navy-900 mb-6 bg-gradient-to-r from-navy-900 via-slate-800 to-navy-900 bg-clip-text text-transparent drop-shadow-2xl">Our Foundation</h2>
+        <p class="text-2xl md:text-3xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">The principles driving every engagement and decision</p>
+      </div>
+      
+      <!-- Premium 3-Col Grid with Floating Cards -->
+      <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
+        
+        <!-- Vision - Lead Card -->
+        <div class="core-values-card group relative perspective-[1200px] h-[480px] md:h-[520px]" data-aos="flip-left" data-aos-delay="100">
+          <div class="glass-card h-full rounded-4xl p-12 lg:p-16 backdrop-blur-xl border border-white/30 shadow-2xl hover:shadow-emerald-glow hover:shadow-3xl hover:-translate-y-8 hover:rotate-y-3 hover:scale-[1.02] transition-all duration-1000 overflow-hidden">
+            <!-- Shine Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 -translate-x-[100%]"></div>
+            
+            <!-- Floating Icon Ring -->
+            <div class="w-32 h-32 mx-auto mb-10 relative z-20 group-hover:animate-spin-slow">
+              <div class="absolute inset-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl shadow-2xl blur-xl opacity-20 animate-ping"></div>
+              <div class="absolute inset-0 w-28 h-28 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-500/50 mx-auto group-hover:scale-110 transition-all duration-500">
+                <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="relative z-10 text-center h-full flex flex-col justify-center">
+              <h3 class="font-black text-3xl md:text-4xl text-navy-900 mb-6 drop-shadow-lg tracking-tight">Vision</h3>
+              <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-md mx-auto mb-10 opacity-95 font-medium">Elite financial intelligence democratized for tomorrow's venture leaders</p>
+              
+              <!-- Metric Ring -->
+              <div class="w-28 h-28 mx-auto mb-12 rounded-full border-8 border-emerald-500/10 bg-gradient-to-br from-emerald-500/5 to-transparent flex items-center justify-center shadow-inner">
+                <div class="text-3xl font-black text-emerald-600">$750M+</div>
+                <p class="text-xs text-slate-500 uppercase tracking-wider mt-1 font-bold">Deployed Capital</p>
+              </div>
+              
+              <!-- Signature CTA -->
+              <a href="contact.html" class="inline-flex items-center group px-8 py-5 rounded-3xl font-bold text-lg bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-2xl shadow-emerald-500/50 hover:shadow-emerald-glow hover:scale-105 hover:-translate-y-1 transition-all duration-500 mx-auto w-full justify-center">
+                Live Our Vision
+                <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mission -->
+        <div class="core-values-card group relative perspective-[1200px] h-[480px] md:h-[520px]" data-aos="flip-left" data-aos-delay="300">
+          <div class="glass-card h-full rounded-4xl p-12 lg:p-16 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-emerald-glow hover:shadow-3xl hover:-translate-y-8 hover:rotate-y-[-3deg] hover:scale-[1.02] transition-all duration-1000 overflow-hidden">
+            <!-- Shine Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-12deg] opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 -translate-x-[100%]"></div>
+            
+            <!-- Floating Icon Ring -->
+            <div class="w-32 h-32 mx-auto mb-10 relative z-20">
+              <div class="absolute inset-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl shadow-2xl blur-xl opacity-20 animate-ping-slow"></div>
+              <div class="absolute inset-0 w-28 h-28 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-500/40 mx-auto group-hover:scale-110 transition-all duration-500">
+                <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="relative z-10 text-center h-full flex flex-col justify-center">
+              <h3 class="font-black text-3xl md:text-4xl text-navy-900 mb-6 drop-shadow-lg tracking-tight">Mission</h3>
+              <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-md mx-auto mb-10 opacity-95 font-medium">Sustainable scaling blueprints through battle-tested financial engineering</p>
+              
+              <!-- Metric Ring -->
+              <div class="w-28 h-28 mx-auto mb-12 rounded-full border-8 border-emerald-500/10 bg-gradient-to-br from-emerald-500/5 to-transparent flex items-center justify-center shadow-inner">
+                <div class="text-3xl font-black text-emerald-600">28mo</div>
+                <p class="text-xs text-slate-500 uppercase tracking-wider mt-1 font-bold">Avg Runway Extension</p>
+              </div>
+              
+              <!-- Signature CTA -->
+              <a href="contact.html" class="inline-flex items-center group px-8 py-5 rounded-3xl font-bold text-lg bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-2xl shadow-emerald-500/50 hover:shadow-emerald-glow hover:scale-105 hover:-translate-y-1 transition-all duration-500 mx-auto w-full justify-center">
+                Execute Mission
+                <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Values -->
+        <div class="core-values-card group relative perspective-[1200px] h-[480px] md:h-[520px]" data-aos="flip-left" data-aos-delay="500">
+          <div class="glass-card h-full rounded-4xl p-12 lg:p-16 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-emerald-glow hover:shadow-3xl hover:-translate-y-8 hover:rotate-y-1 hover:scale-[1.02] transition-all duration-1000 overflow-hidden">
+            <!-- Shine Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 -translate-x-[100%]"></div>
+            
+            <!-- Floating Icon Ring -->
+            <div class="w-32 h-32 mx-auto mb-10 relative z-20 group-hover:animate-float">
+              <div class="absolute inset-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl shadow-2xl blur-xl opacity-20 animate-pulse-slow"></div>
+              <div class="absolute inset-0 w-28 h-28 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-500/40 mx-auto group-hover:scale-110 transition-all duration-500">
+                <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="relative z-10 text-center h-full flex flex-col justify-center">
+              <h3 class="font-black text-3xl md:text-4xl text-navy-900 mb-6 drop-shadow-lg tracking-tight">Values</h3>
+              <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-md mx-auto mb-10 opacity-95 font-medium">Transparency. Founder-first execution. Uncompromised data integrity.</p>
+              
+              <!-- Metric Ring -->
+              <div class="w-28 h-28 mx-auto mb-12 rounded-full border-8 border-emerald-500/10 bg-gradient-to-br from-emerald-500/5 to-transparent flex items-center justify-center shadow-inner">
+                <div class="text-3xl font-black text-emerald-600">12x</div>
+                <p class="text-xs text-slate-500 uppercase tracking-wider mt-1 font-bold">Avg Valuation Multiple</p>
+              </div>
+              
+              <!-- Signature CTA -->
+              <a href="contact.html" class="inline-flex items-center group px-8 py-5 rounded-3xl font-bold text-lg bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-2xl shadow-emerald-500/50 hover:shadow-emerald-glow hover:scale-105 hover:-translate-y-1 transition-all duration-500 mx-auto w-full justify-center">
+                Embrace Values
+                <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+  
+      </div>
+
+      <!-- Bottom Pattern Accent -->
+      <div class="mt-32 pt-24 border-t-4 border-gradient-to-r from-emerald-500/20 via-transparent to-emerald-500/20 relative">
+        <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full opacity-10 blur-xl"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Final CTA -->
+  <section class="relative overflow-hidden py-24 text-white text-center" data-aos="fade-up">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-navy-900 to-emerald-900"></div>
+    <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 20% 20%, rgba(16,185,129,0.35), transparent 45%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.12), transparent 35%);"></div>
+    <div class="relative max-w-5xl mx-auto px-4">
+      <p class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold mb-5">
+        Founder-Centric Finance Team
+      </p>
+      <h2 class="font-bold text-4xl md:text-5xl mb-5">Ready to Turn Financial Chaos Into a Scalable Plan?</h2>
+      <p class="text-lg md:text-xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed">
+        Book a focused strategy call and leave with a practical roadmap for runway, reporting, and growth decisions.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contact.html" class="inline-flex items-center justify-center font-semibold text-lg px-10 py-4 rounded-xl btn-emerald text-white hover:scale-105 transition-all duration-300 emerald-glow shadow-2xl">
+          Book Strategy Call
+        </a>
+        <a href="services.html" class="inline-flex items-center justify-center font-semibold text-lg px-10 py-4 rounded-xl border border-white/30 bg-white/10 text-white hover:bg-white/20 transition-colors">
+          Review Services
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <div data-include="footer.html"></div>
+  
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+  </script>
+  
+  <!-- Include HTML partials (simple script) -->
+  <script>
+    const includeTargets = Array.from(document.querySelectorAll('[data-include]'));
+
+    Promise.all(includeTargets.map(async (el) => {
+      const response = await fetch(el.getAttribute('data-include'));
+      el.outerHTML = await response.text();
+    })).then(() => {
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      const progressBar = document.getElementById('scroll-progress');
+      const backToTopBtn = document.getElementById('back-to-top');
+
+      const handleScrollUi = () => {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        if (progressBar) {
+          const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+        }
+
+        if (backToTopBtn) {
+          if (scrollTop > 260) {
+            backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+            backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          } else {
+            backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+            backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          }
+        }
+      };
+
+      window.addEventListener('scroll', handleScrollUi, { passive: true });
+      handleScrollUi();
+
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+

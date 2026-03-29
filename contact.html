@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Trinity 718 - Financial Blueprint</title>
+  <meta name="description" content="Book your discovery call. Revenue stage selector and financial bottleneck intake form.">
+  
+  <!-- Same styles as previous -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'navy-900': '#001A2D',
+            'emerald-500': '#10B981',
+            'off-white': '#F8FAFC',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    * { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2'><polyline points='15 18 9 12 15 6'></polyline></svg>") 12 12, auto; }
+    .mesh-gradient { background: radial-gradient(circle at 20% 80%, rgba(16,185,129,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(0,26,45,0.15) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(248,250,252,0.3) 0%, transparent 50%); }
+    .glass-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); }
+    .emerald-glow { box-shadow: 0 0 20px rgba(16,185,129,0.4); }
+    .btn-emerald { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
+  </style>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-inter bg-white text-slate-600 antialiased">
+  
+  <!-- Navbar -->
+  <div data-include="navbar.html"></div>
+  
+  <!-- Main Contact Section -->
+  <section class="relative overflow-hidden mesh-gradient px-4 sm:px-6 lg:px-8 py-10 flex items-center" style="min-height: calc(100svh - 88px);">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-24 -right-20 w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-28 -left-24 w-80 h-80 bg-navy-900/10 rounded-full blur-3xl"></div>
+      <div class="absolute inset-x-0 top-16 h-px bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent opacity-60"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10 w-full">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+        <div class="bg-white/95 rounded-3xl border border-slate-200 shadow-2xl p-7 md:p-10" data-aos="fade-right">
+          <p class="inline-flex items-center rounded-full border border-emerald-500/30 bg-white/80 px-4 py-2 text-xs sm:text-sm font-semibold text-navy-900 mb-4">
+            90-Day Acceleration Blueprint
+          </p>
+          <h1 class="font-bold text-3xl md:text-4xl text-navy-900 mb-4 leading-tight">
+            Book Your Financial Strategy Call
+          </h1>
+          <p class="text-base md:text-lg text-slate-600 mb-7 leading-relaxed">
+            Share your current bottleneck and we will send a focused plan built for your stage.
+          </p>
+
+          <div class="grid sm:grid-cols-3 gap-3 mb-7 text-sm">
+            <a href="mailto:hello@trinity718.com" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-600 hover:border-emerald-500 hover:text-emerald-600 transition-colors">Email Us</a>
+            <a href="tel:+12025550188" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-600 hover:border-emerald-500 hover:text-emerald-600 transition-colors">Call Us</a>
+            <span class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-600">Mon-Fri 9AM-6PM</span>
+          </div>
+
+          <form action="mailto:hello@trinity718.com" method="post" enctype="text/plain" class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold text-navy-900 mb-2">Full Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 transition-all" placeholder="John Doe">
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-navy-900 mb-2">Work Email</label>
+                <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 transition-all" placeholder="john@company.com">
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold text-navy-900 mb-2">Company Name</label>
+                <input type="text" name="company" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 transition-all" placeholder="Acme Corp">
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-navy-900 mb-2">Revenue Stage</label>
+                <select name="revenue" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 transition-all">
+                  <option value="">Select stage</option>
+                  <option>$3M-$10M ARR</option>
+                  <option>$10M-$50M ARR</option>
+                  <option>$50M+ ARR</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-2">Current Financial Bottleneck</label>
+              <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 transition-all resize-vertical" placeholder="Runway concerns, pricing pressure, fundraising prep, or reporting gaps..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full font-semibold text-lg py-4 px-8 rounded-xl btn-emerald text-white hover:scale-[1.01] emerald-glow shadow-xl transition-all">
+              Send Blueprint Request
+            </button>
+          </form>
+        </div>
+
+        <div class="space-y-6" data-aos="fade-left" data-aos-delay="200">
+          <div class="bg-white/92 rounded-3xl border border-slate-200 shadow-xl p-7">
+            <h3 class="font-bold text-2xl text-navy-900 mb-5">What Happens Next</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-semibold text-sm flex-shrink-0">1</span>
+                <p class="text-slate-600"><span class="font-semibold text-navy-900">Quick Discovery:</span> 15-minute call to understand your growth stage and priorities.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-semibold text-sm flex-shrink-0">2</span>
+                <p class="text-slate-600"><span class="font-semibold text-navy-900">Action Plan:</span> Recommended engagement and a practical 90-day roadmap.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-semibold text-sm flex-shrink-0">3</span>
+                <p class="text-slate-600"><span class="font-semibold text-navy-900">Execution:</span> Weekly momentum with clear reporting and measurable outputs.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white/92 rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+            <div class="px-6 pt-6 pb-4">
+              <h3 class="font-bold text-xl text-navy-900">Visit Our Advisory Hub</h3>
+              <p class="text-slate-600 mt-1">Wall Street, New York</p>
+            </div>
+            <iframe title="Trinity 718 Map" class="w-full h-72" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Wall%20Street%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative overflow-hidden py-20 text-white text-center" data-aos="fade-up">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-navy-900 to-emerald-900"></div>
+    <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 20% 20%, rgba(16,185,129,0.35), transparent 45%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.12), transparent 35%);"></div>
+    <div class="relative max-w-5xl mx-auto px-4">
+      <p class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold mb-5">
+        Fast Response Commitment
+      </p>
+      <h2 class="font-bold text-4xl md:text-5xl mb-5">Need Answers Quickly?</h2>
+      <p class="text-lg md:text-xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed">
+        Share your goals today. We will reply with clear next steps and a recommended engagement path.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:hello@trinity718.com" class="inline-flex items-center justify-center font-semibold text-lg px-10 py-4 rounded-xl btn-emerald text-white hover:scale-105 transition-all duration-300 emerald-glow shadow-2xl">Email Directly</a>
+        <a href="tel:+12025550188" class="inline-flex items-center justify-center font-semibold text-lg px-10 py-4 rounded-xl border border-white/30 bg-white/10 text-white hover:bg-white/20 transition-colors">Call Now</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <div data-include="footer.html"></div>
+  
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({duration: 1000, once: true, offset: 100});</script>
+  <script>
+    const includeTargets = Array.from(document.querySelectorAll('[data-include]'));
+
+    Promise.all(includeTargets.map(async (el) => {
+      const response = await fetch(el.getAttribute('data-include'));
+      el.outerHTML = await response.text();
+    })).then(() => {
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      const progressBar = document.getElementById('scroll-progress');
+      const backToTopBtn = document.getElementById('back-to-top');
+
+      const handleScrollUi = () => {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        if (progressBar) {
+          const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+        }
+
+        if (backToTopBtn) {
+          if (scrollTop > 260) {
+            backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+            backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          } else {
+            backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+            backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          }
+        }
+      };
+
+      window.addEventListener('scroll', handleScrollUi, { passive: true });
+      handleScrollUi();
+
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

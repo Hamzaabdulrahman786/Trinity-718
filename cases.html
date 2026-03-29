@@ -23,6 +23,31 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
+    :root {
+      --theme-emerald: #10B981;
+      --theme-emerald-deep: #047857;
+      --theme-track: #022c22;
+    }
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--theme-emerald) var(--theme-track);
+    }
+    *::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+    *::-webkit-scrollbar-track {
+      background: linear-gradient(180deg, #064e3b 0%, #001A2D 100%);
+      border-radius: 999px;
+    }
+    *::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #34D399 0%, #059669 100%);
+      border: 2px solid var(--theme-track);
+      border-radius: 999px;
+    }
+    *::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--theme-emerald) 0%, var(--theme-emerald-deep) 100%);
+    }
     * { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2'><polyline points='15 18 9 12 15 6'></polyline></svg>") 12 12, auto; }
     .mesh-gradient { background: radial-gradient(circle at 20% 80%, rgba(16,185,129,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(0,26,45,0.15) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(248,250,252,0.3) 0%, transparent 50%); }
     .glass-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -26,6 +26,31 @@
   <!-- Custom CSS -->
   <style>
     html { scroll-behavior: smooth; }
+    :root {
+      --theme-emerald: #10B981;
+      --theme-emerald-deep: #047857;
+      --theme-track: #022c22;
+    }
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--theme-emerald) var(--theme-track);
+    }
+    *::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+    *::-webkit-scrollbar-track {
+      background: linear-gradient(180deg, #064e3b 0%, #001A2D 100%);
+      border-radius: 999px;
+    }
+    *::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #34D399 0%, #059669 100%);
+      border: 2px solid var(--theme-track);
+      border-radius: 999px;
+    }
+    *::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--theme-emerald) 0%, var(--theme-emerald-deep) 100%);
+    }
     * { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='15 18 9 12 15 6'></polyline></svg>") 12 12, auto; }
     .mesh-gradient {
       background: radial-gradient(circle at 20% 80%, rgba(16,185,129,0.15) 0%, transparent 50%),
@@ -52,10 +77,42 @@
       background-clip: text;
     }
     .service-card {
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     }
     .service-card:hover {
-      transform: translateY(-20px) rotateX(5deg) rotateY(5deg) scale(1.03);
+      transform: translateY(-10px);
+      box-shadow: 0 26px 45px -28px rgba(16,185,129,0.55), 0 14px 35px -24px rgba(15,23,42,0.35);
+      border-color: rgba(16,185,129,0.45);
+    }
+    .service-title {
+      position: relative;
+      display: inline-block;
+    }
+    .service-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #10B981, #34D399);
+      transition: width 0.35s ease;
+    }
+    .service-card:hover .service-title::after {
+      width: 100%;
+    }
+    .service-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      color: #475569;
+    }
+    .service-list-item-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      margin-top: 0.45rem;
+      border-radius: 999px;
+      background-color: #10B981;
     }
     @keyframes pulse-icon {
       0%, 100% { transform: scale(1) rotate(0deg); }
@@ -100,11 +157,11 @@
         </p>
 
         <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 mb-5 leading-tight" data-aos="fade-right" data-aos-delay="120">
-          Decision-Grade Finance for Series A–C
+          Decision-Grade Finance for Series A-C
         </h1>
 
         <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed" data-aos="fade-right" data-aos-delay="200">
-          We build investor-ready models, establish runway clarity, and align fundraising narratives—so your strategy converts into momentum.
+          We build investor-ready models, establish runway clarity, and align fundraising narratives so your strategy converts into momentum.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" data-aos="zoom-in" data-aos-delay="280">
@@ -138,8 +195,13 @@
 
       <div class="bg-white/90 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 shadow-2xl" data-aos="fade-left" data-aos-delay="220">
         <div class="flex items-center justify-between gap-6 mb-6">
-          <h2 class="font-bold text-2xl text-navy-900">What we do best</h2>
-          <div class="hidden sm:block w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/30"></div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-emerald-600 font-semibold mb-2">Delivery Focus</p>
+            <h2 class="font-bold text-2xl text-navy-900">High-Impact Service Outcomes</h2>
+          </div>
+          <div class="hidden sm:flex w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 items-center justify-center">
+            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+          </div>
         </div>
 
         <div class="grid gap-4">
@@ -179,7 +241,7 @@
             <p class="text-sm text-emerald-500 font-semibold">10 Days</p>
           </div>
           <p class="mt-2 text-slate-600 text-sm leading-relaxed">
-            A clear plan you can use immediately—built to stand up in board meetings and diligence rooms.
+            A clear plan you can use immediately, built to stand up in board meetings and diligence rooms.
           </p>
         </div>
       </div>
@@ -187,106 +249,130 @@
   </section>
   
   <!-- Services Grid - Off-white -->
-  <section id="services-grid" class="py-32 bg-off-white" data-aos="fade-up" data-aos-delay="100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="services-grid" class="relative py-28 bg-off-white overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-20 left-12 w-72 h-72 rounded-full bg-emerald-500/10 blur-3xl"></div>
+      <div class="absolute bottom-0 right-16 w-72 h-72 rounded-full bg-navy-900/10 blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-14" data-aos="fade-down">
+        <span class="inline-flex items-center rounded-full border border-emerald-500/30 bg-white/80 px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide text-emerald-700 mb-5">
+          Service Portfolio
+        </span>
+        <h2 class="font-bold text-4xl md:text-5xl text-navy-900 mb-4">Finance Services Designed for Scale</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          Each service is built for growth-stage companies that need strategic direction, operational rigor, and investor-grade execution.
+        </p>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Fractional CFO -->
-        <div class="glass-card p-10 rounded-3xl hover:-translate-y-4 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="0">
-          <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-8 mx-auto group-hover:scale-110 shadow-2xl transition-transform">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-            </svg>
+        <article class="service-card group rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5" data-aos="fade-up" data-aos-delay="0">
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"></path>
+              </svg>
+            </div>
+            <span class="rounded-full border border-emerald-500/30 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Strategic</span>
           </div>
-          <h3 class="font-bold text-2xl text-navy-900 mb-6 text-center">Fractional CFO</h3>
-          <p class="text-slate-600 leading-relaxed text-center mb-6">Executive-level leadership without full-time overhead. Strategic oversight for Series A-C scaling.</p>
-          <ul class="text-sm space-y-2 text-slate-600">
-            <li>• Board-ready financial reporting</li>
-            <li>• KPI dashboards & forecasting</li>
-            <li>• Capital allocation strategy</li>
+          <h3 class="service-title font-bold text-xl text-navy-900 mb-5">Fractional CFO</h3>
+          <p class="text-slate-600 leading-relaxed mb-5">Executive finance leadership without full-time overhead, tailored to your growth stage.</p>
+          <ul class="space-y-2 text-sm">
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Board-ready financial reporting</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>KPI dashboards and forecasting</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Capital allocation strategy</span></li>
           </ul>
-        </div>
-        
-        <!-- Financial Modeling -->
-        <div class="glass-card p-10 rounded-3xl hover:-translate-y-4 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-8 mx-auto group-hover:scale-110 shadow-2xl transition-transform">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-            </svg>
+        </article>
+
+        <article class="service-card group rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5" data-aos="fade-up" data-aos-delay="120">
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01"></path>
+              </svg>
+            </div>
+            <span class="rounded-full border border-emerald-500/30 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Modeling</span>
           </div>
-          <h3 class="font-bold text-2xl text-navy-900 mb-6 text-center">Advanced Modeling</h3>
-          <p class="text-slate-600 leading-relaxed text-center mb-6">Multi-scenario projections battle-tested for M&A, pricing, and capital raises.</p>
-          <ul class="text-sm space-y-2 text-slate-600">
-            <li>• 3-statement integrated models</li>
-            <li>• Monte Carlo simulations</li>
-            <li>• SaaS/ marketplace LTV/CAC</li>
+          <h3 class="service-title font-bold text-xl text-navy-900 mb-5">Advanced Modeling</h3>
+          <p class="text-slate-600 leading-relaxed mb-5">Decision-grade financial models built for pricing, hiring, and funding scenarios.</p>
+          <ul class="space-y-2 text-sm">
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Integrated three-statement models</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Sensitivity and scenario analysis</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Unit economics and LTV/CAC planning</span></li>
           </ul>
-        </div>
-        
-        <!-- Fundraise Orchestration -->
-        <div class="glass-card p-10 rounded-3xl hover:-translate-y-4 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="400">
-          <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-8 mx-auto group-hover:scale-110 shadow-2xl transition-transform">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-            </svg>
+        </article>
+
+        <article class="service-card group rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5" data-aos="fade-up" data-aos-delay="240">
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              </svg>
+            </div>
+            <span class="rounded-full border border-emerald-500/30 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Fundraising</span>
           </div>
-          <h3 class="font-bold text-2xl text-navy-900 mb-6 text-center">Fundraise Orchestration</h3>
-          <p class="text-slate-600 leading-relaxed text-center mb-6">Deep-dive audit prep and narrative alignment for institutional capital.</p>
-          <ul class="text-sm space-y-2 text-slate-600">
-            <li>• Data room organization</li>
-            <li>• Pitch deck financials</li>
-            <li>• VC term sheet analysis</li>
+          <h3 class="service-title font-bold text-xl text-navy-900 mb-5">Fundraise Orchestration</h3>
+          <p class="text-slate-600 leading-relaxed mb-5">Prepare for investor diligence with a clear narrative, clean data room, and financial coherence.</p>
+          <ul class="space-y-2 text-sm">
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Data room organization</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Pitch deck financial alignment</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Term-sheet analysis support</span></li>
           </ul>
-        </div>
-        
-        <!-- Cash Flow Engineering -->
-        <div class="glass-card p-10 rounded-3xl hover:-translate-y-4 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="600">
-          <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-8 mx-auto group-hover:scale-110 shadow-2xl transition-transform">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
-            </svg>
+        </article>
+
+        <article class="service-card group rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5" data-aos="fade-up" data-aos-delay="360">
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 9v1"></path>
+              </svg>
+            </div>
+            <span class="rounded-full border border-emerald-500/30 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Runway</span>
           </div>
-          <h3 class="font-bold text-2xl text-navy-900 mb-6 text-center">Cash Flow Engineering</h3>
-          <p class="text-slate-600 leading-relaxed text-center mb-6">Precision burn optimization and runway extension without growth sacrifice.</p>
-          <ul class="text-sm space-y-2 text-slate-600">
-            <li>• Working capital optimization</li>
-            <li>• Vendor payment strategy</li>
-            <li>• ARR acceleration tactics</li>
+          <h3 class="service-title font-bold text-xl text-navy-900 mb-5">Cash Flow Engineering</h3>
+          <p class="text-slate-600 leading-relaxed mb-5">Optimize burn and working capital while protecting execution speed and strategic priorities.</p>
+          <ul class="space-y-2 text-sm">
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Working capital optimization</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Vendor and payment strategy</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Runway extension planning</span></li>
           </ul>
-        </div>
-        
-        <!-- Operational Strategy -->
-        <div class="glass-card p-10 rounded-3xl hover:-translate-y-4 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="800">
-          <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-8 mx-auto group-hover:scale-110 shadow-2xl transition-transform">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-            </svg>
+        </article>
+
+        <article class="service-card group rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5" data-aos="fade-up" data-aos-delay="480">
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path>
+              </svg>
+            </div>
+            <span class="rounded-full border border-emerald-500/30 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Operations</span>
           </div>
-          <h3 class="font-bold text-2xl text-navy-900 mb-6 text-center">Operational Strategy</h3>
-          <p class="text-slate-600 leading-relaxed text-center mb-6">ERP integration and reporting systems for enterprise readiness.</p>
-          <ul class="text-sm space-y-2 text-slate-600">
-            <li>• QuickBooks to NetSuite migration</li>
-            <li>• Real-time dashboards</li>
-            <li>• Headcount planning models</li>
+          <h3 class="service-title font-bold text-xl text-navy-900 mb-5">Operational Strategy</h3>
+          <p class="text-slate-600 leading-relaxed mb-5">Build reliable systems, reporting rhythm, and operational visibility as you scale teams.</p>
+          <ul class="space-y-2 text-sm">
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Reporting process design</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Dashboard architecture</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Headcount and spend planning</span></li>
           </ul>
-        </div>
-        
-        <!-- Exit Planning -->
-        <div class="glass-card p-10 rounded-3xl hover:-translate-y-4 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="1000">
-          <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-8 mx-auto group-hover:scale-110 shadow-2xl transition-transform">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12a2 2 0 01-2 2h-2.28c-.597.454-1.503.786-2.72.931a49.925 49.925 0 01-.581.06H12a2 2 0 01-2-2v-5.76m4.937-2.77c.44-.586.807-1.505 1.036-2.597a3.237 3.237 0 00.12-4.684 3.617 3.617 0 00-5.99-1.653"/>
-            </svg>
+        </article>
+
+        <article class="service-card group rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5" data-aos="fade-up" data-aos-delay="600">
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12a2 2 0 01-2 2h-2"></path>
+              </svg>
+            </div>
+            <span class="rounded-full border border-emerald-500/30 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Liquidity</span>
           </div>
-          <h3 class="font-bold text-2xl text-navy-900 mb-6 text-center">Exit & Liquidity</h3>
-          <p class="text-slate-600 leading-relaxed text-center mb-6">Maximum valuation positioning for strategic acquisition or IPO.</p>
-          <ul class="text-sm space-y-2 text-slate-600">
-            <li>• Clean cap table prep</li>
-            <li>• Strategic buyer targeting</li>
-            <li>• Earnout optimization</li>
+          <h3 class="service-title font-bold text-xl text-navy-900 mb-5">Exit and Liquidity Planning</h3>
+          <p class="text-slate-600 leading-relaxed mb-5">Position the business for stronger valuation outcomes in M&A, strategic sales, or other liquidity paths.</p>
+          <ul class="space-y-2 text-sm">
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Cap table and diligence readiness</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Buyer narrative support</span></li>
+            <li class="service-list-item"><span class="service-list-item-dot"></span><span>Value driver optimization</span></li>
           </ul>
-        </div>
-        
+        </article>
       </div>
     </div>
   </section>
@@ -366,4 +452,5 @@
   </script>
 </body>
 </html>
+
 

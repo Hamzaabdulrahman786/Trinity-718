@@ -28,6 +28,31 @@
     html { 
       scroll-behavior: smooth; 
     }
+    :root {
+      --theme-emerald: #10B981;
+      --theme-emerald-deep: #047857;
+      --theme-track: #022c22;
+    }
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--theme-emerald) var(--theme-track);
+    }
+    *::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+    *::-webkit-scrollbar-track {
+      background: linear-gradient(180deg, #064e3b 0%, #001A2D 100%);
+      border-radius: 999px;
+    }
+    *::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #34D399 0%, #059669 100%);
+      border: 2px solid var(--theme-track);
+      border-radius: 999px;
+    }
+    *::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--theme-emerald) 0%, var(--theme-emerald-deep) 100%);
+    }
     * { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='15 18 9 12 15 6'></polyline></svg>") 12 12, auto; }
     .mesh-gradient {
       background: radial-gradient(circle at 20% 80%, rgba(16,185,129,0.15) 0%, transparent 50%),
@@ -41,7 +66,12 @@
       box-shadow: 0 25px 45px -15px rgba(0,0,0,0.1);
     }
     .core-values-card {
-      transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+    .core-values-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 45px -25px rgba(16,185,129,0.55), 0 14px 30px -20px rgba(2,44,34,0.35);
+      border-color: rgba(16,185,129,0.45);
     }
     @keyframes spin-slow {
       from { transform: rotate(0deg); }
@@ -172,136 +202,82 @@
   </section>
   
   <!-- Ultimate Core Values Section -->
-  <section class="relative py-32 overflow-hidden" style="background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%);" data-aos="fade-up">
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-1/4 left-10 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-20 w-72 h-72 bg-slate-200/30 rounded-full blur-3xl"></div>
+  <section class="relative py-28 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50/40" data-aos="fade-up">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-16 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-72 h-72 bg-navy-900/10 rounded-full blur-3xl"></div>
     </div>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <!-- Section Header -->
-      <div class="text-center mb-24" data-aos="fade-down">
-        <h2 class="font-black text-5xl md:text-6xl lg:text-7xl text-navy-900 mb-6 bg-gradient-to-r from-navy-900 via-slate-800 to-navy-900 bg-clip-text text-transparent drop-shadow-2xl">Our Foundation</h2>
-        <p class="text-2xl md:text-3xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">The principles driving every engagement and decision</p>
-      </div>
-      
-      <!-- Premium 3-Col Grid with Floating Cards -->
-      <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
-        
-        <!-- Vision - Lead Card -->
-        <div class="core-values-card group relative perspective-[1200px] h-[480px] md:h-[520px]" data-aos="flip-left" data-aos-delay="100">
-          <div class="glass-card h-full rounded-4xl p-12 lg:p-16 backdrop-blur-xl border border-white/30 shadow-2xl hover:shadow-emerald-glow hover:shadow-3xl hover:-translate-y-8 hover:rotate-y-3 hover:scale-[1.02] transition-all duration-1000 overflow-hidden">
-            <!-- Shine Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 -translate-x-[100%]"></div>
-            
-            <!-- Floating Icon Ring -->
-            <div class="w-32 h-32 mx-auto mb-10 relative z-20 group-hover:animate-spin-slow">
-              <div class="absolute inset-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl shadow-2xl blur-xl opacity-20 animate-ping"></div>
-              <div class="absolute inset-0 w-28 h-28 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-500/50 mx-auto group-hover:scale-110 transition-all duration-500">
-                <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                </svg>
-              </div>
-            </div>
-            
-            <div class="relative z-10 text-center h-full flex flex-col justify-center">
-              <h3 class="font-black text-3xl md:text-4xl text-navy-900 mb-6 drop-shadow-lg tracking-tight">Vision</h3>
-              <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-md mx-auto mb-10 opacity-95 font-medium">Elite financial intelligence democratized for tomorrow's venture leaders</p>
-              
-              <!-- Metric Ring -->
-              <div class="w-28 h-28 mx-auto mb-12 rounded-full border-8 border-emerald-500/10 bg-gradient-to-br from-emerald-500/5 to-transparent flex items-center justify-center shadow-inner">
-                <div class="text-3xl font-black text-emerald-600">$750M+</div>
-                <p class="text-xs text-slate-500 uppercase tracking-wider mt-1 font-bold">Deployed Capital</p>
-              </div>
-              
-              <!-- Signature CTA -->
-              <a href="contact.html" class="inline-flex items-center group px-8 py-5 rounded-3xl font-bold text-lg bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-2xl shadow-emerald-500/50 hover:shadow-emerald-glow hover:scale-105 hover:-translate-y-1 transition-all duration-500 mx-auto w-full justify-center">
-                Live Our Vision
-                <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Mission -->
-        <div class="core-values-card group relative perspective-[1200px] h-[480px] md:h-[520px]" data-aos="flip-left" data-aos-delay="300">
-          <div class="glass-card h-full rounded-4xl p-12 lg:p-16 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-emerald-glow hover:shadow-3xl hover:-translate-y-8 hover:rotate-y-[-3deg] hover:scale-[1.02] transition-all duration-1000 overflow-hidden">
-            <!-- Shine Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-12deg] opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 -translate-x-[100%]"></div>
-            
-            <!-- Floating Icon Ring -->
-            <div class="w-32 h-32 mx-auto mb-10 relative z-20">
-              <div class="absolute inset-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl shadow-2xl blur-xl opacity-20 animate-ping-slow"></div>
-              <div class="absolute inset-0 w-28 h-28 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-500/40 mx-auto group-hover:scale-110 transition-all duration-500">
-                <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                </svg>
-              </div>
-            </div>
-            
-            <div class="relative z-10 text-center h-full flex flex-col justify-center">
-              <h3 class="font-black text-3xl md:text-4xl text-navy-900 mb-6 drop-shadow-lg tracking-tight">Mission</h3>
-              <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-md mx-auto mb-10 opacity-95 font-medium">Sustainable scaling blueprints through battle-tested financial engineering</p>
-              
-              <!-- Metric Ring -->
-              <div class="w-28 h-28 mx-auto mb-12 rounded-full border-8 border-emerald-500/10 bg-gradient-to-br from-emerald-500/5 to-transparent flex items-center justify-center shadow-inner">
-                <div class="text-3xl font-black text-emerald-600">28mo</div>
-                <p class="text-xs text-slate-500 uppercase tracking-wider mt-1 font-bold">Avg Runway Extension</p>
-              </div>
-              
-              <!-- Signature CTA -->
-              <a href="contact.html" class="inline-flex items-center group px-8 py-5 rounded-3xl font-bold text-lg bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-2xl shadow-emerald-500/50 hover:shadow-emerald-glow hover:scale-105 hover:-translate-y-1 transition-all duration-500 mx-auto w-full justify-center">
-                Execute Mission
-                <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Values -->
-        <div class="core-values-card group relative perspective-[1200px] h-[480px] md:h-[520px]" data-aos="flip-left" data-aos-delay="500">
-          <div class="glass-card h-full rounded-4xl p-12 lg:p-16 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-emerald-glow hover:shadow-3xl hover:-translate-y-8 hover:rotate-y-1 hover:scale-[1.02] transition-all duration-1000 overflow-hidden">
-            <!-- Shine Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 -translate-x-[100%]"></div>
-            
-            <!-- Floating Icon Ring -->
-            <div class="w-32 h-32 mx-auto mb-10 relative z-20 group-hover:animate-float">
-              <div class="absolute inset-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl shadow-2xl blur-xl opacity-20 animate-pulse-slow"></div>
-              <div class="absolute inset-0 w-28 h-28 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-500/40 mx-auto group-hover:scale-110 transition-all duration-500">
-                <svg class="w-16 h-16 text-white drop-shadow-2xl" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                </svg>
-              </div>
-            </div>
-            
-            <div class="relative z-10 text-center h-full flex flex-col justify-center">
-              <h3 class="font-black text-3xl md:text-4xl text-navy-900 mb-6 drop-shadow-lg tracking-tight">Values</h3>
-              <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-md mx-auto mb-10 opacity-95 font-medium">Transparency. Founder-first execution. Uncompromised data integrity.</p>
-              
-              <!-- Metric Ring -->
-              <div class="w-28 h-28 mx-auto mb-12 rounded-full border-8 border-emerald-500/10 bg-gradient-to-br from-emerald-500/5 to-transparent flex items-center justify-center shadow-inner">
-                <div class="text-3xl font-black text-emerald-600">12x</div>
-                <p class="text-xs text-slate-500 uppercase tracking-wider mt-1 font-bold">Avg Valuation Multiple</p>
-              </div>
-              
-              <!-- Signature CTA -->
-              <a href="contact.html" class="inline-flex items-center group px-8 py-5 rounded-3xl font-bold text-lg bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-2xl shadow-emerald-500/50 hover:shadow-emerald-glow hover:scale-105 hover:-translate-y-1 transition-all duration-500 mx-auto w-full justify-center">
-                Embrace Values
-                <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-  
+      <div class="text-center mb-14" data-aos="fade-down">
+        <span class="inline-flex items-center rounded-full border border-emerald-500/30 bg-white/80 px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide text-emerald-700 mb-5">
+          Ultimate Core Values
+        </span>
+        <h2 class="font-bold text-4xl md:text-5xl text-navy-900 mb-4">A Professional Standard You Can Rely On</h2>
+        <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          Every engagement is guided by clear thinking, disciplined execution, and transparent partnership.
+        </p>
       </div>
 
-      <!-- Bottom Pattern Accent -->
-      <div class="mt-32 pt-24 border-t-4 border-gradient-to-r from-emerald-500/20 via-transparent to-emerald-500/20 relative">
-        <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full opacity-10 blur-xl"></div>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <article class="core-values-card rounded-3xl border border-emerald-500/20 bg-white/90 p-8 shadow-xl shadow-slate-900/5" data-aos="fade-up" data-aos-delay="80">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-2xl text-navy-900 mb-3">Vision</h3>
+          <p class="text-slate-600 leading-relaxed mb-5">
+            We help founders turn financial complexity into focused, high-confidence growth decisions.
+          </p>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span>Long-term capital planning</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span>Clarity for strategic decisions</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span>Execution grounded in data</span></li>
+          </ul>
+        </article>
+
+        <article class="core-values-card rounded-3xl border border-emerald-500/20 bg-white/90 p-8 shadow-xl shadow-slate-900/5" data-aos="fade-up" data-aos-delay="180">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-2xl text-navy-900 mb-3">Mission</h3>
+          <p class="text-slate-600 leading-relaxed mb-5">
+            Build scalable finance systems that support fundraising, board communication, and operational control.
+          </p>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span>Investor-ready reporting cadence</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span>Scenario-based runway modeling</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span>Practical operating discipline</span></li>
+          </ul>
+        </article>
+
+        <article class="core-values-card rounded-3xl border border-emerald-500/20 bg-white/90 p-8 shadow-xl shadow-slate-900/5 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="280">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-2xl text-navy-900 mb-3">Values</h3>
+          <p class="text-slate-600 leading-relaxed mb-5">
+            Transparency, accountability, and founder-first collaboration shape every recommendation we deliver.
+          </p>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span>Clear assumptions and audit trails</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span>Fast communication and ownership</span></li>
+            <li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span>No unnecessary complexity</span></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="mt-14 rounded-3xl border border-emerald-500/25 bg-white/80 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" data-aos="fade-up" data-aos-delay="360">
+        <p class="text-slate-700 leading-relaxed">
+          Looking for a finance partner that combines strategic depth with execution speed?
+        </p>
+        <a href="contact.html" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-3 font-semibold text-white shadow-lg shadow-emerald-500/30 hover:brightness-105 transition-all">
+          Start a Conversation
+        </a>
       </div>
     </div>
   </section>

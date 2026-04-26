@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CFO Readiness Assessment | Trinity 718</title>
+  <meta name="description" content="Free CFO Readiness Assessment for founder-led companies in fitness, wellness, franchise, and beauty/CPG.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'navy-900': '#001A2D',
+            'emerald-500': '#10B981',
+            'off-white': '#F8FAFC',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    :root {
+      --theme-emerald: #10B981;
+      --theme-emerald-deep: #047857;
+      --theme-track: #022c22;
+    }
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--theme-emerald) var(--theme-track);
+    }
+    *::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+    *::-webkit-scrollbar-track {
+      background: linear-gradient(180deg, #064e3b 0%, #001A2D 100%);
+      border-radius: 999px;
+    }
+    *::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #34D399 0%, #059669 100%);
+      border: 2px solid var(--theme-track);
+      border-radius: 999px;
+    }
+    *::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--theme-emerald) 0%, var(--theme-emerald-deep) 100%);
+    }
+    * { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2'><polyline points='15 18 9 12 15 6'></polyline></svg>") 12 12, auto; }
+    .mesh-gradient { background: radial-gradient(circle at 20% 80%, rgba(16,185,129,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(0,26,45,0.15) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(248,250,252,0.3) 0%, transparent 50%); }
+    .glass-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); }
+    .emerald-glow { box-shadow: 0 0 20px rgba(16,185,129,0.4); }
+    .btn-emerald { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
+    .assessment-item { border-left: 4px solid transparent; }
+    .assessment-item:hover { border-left-color: #10B981; }
+    @media print {
+      body { background: white; }
+      .no-print { display: none; }
+      .assessment-card { page-break-inside: avoid; }
+    }
+  </style>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-inter bg-white text-slate-600 antialiased">
+  
+  <!-- Navbar -->
+  <div data-include="navbar.html"></div>
+  
+  <!-- Hero -->
+  <section class="relative overflow-hidden mesh-gradient px-4 sm:px-6 lg:px-8 py-10" style="min-height: calc(100svh - 88px);">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-20 right-0 w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-28 left-0 w-80 h-80 bg-navy-900/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto relative z-10 py-20">
+      <div class="text-center mb-12">
+        <p class="inline-flex items-center rounded-full border border-emerald-500/30 bg-white/70 px-4 py-2 text-xs sm:text-sm font-semibold text-navy-900 mb-6">
+          Free Resource
+        </p>
+        <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 mb-5 leading-tight">
+          CFO Readiness Assessment
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+          Discover where your financial foundation stands and what's needed to scale without the chaos. Created specifically for founder-led companies doing $3M-$30M in revenue.
+        </p>
+
+        <div class="flex justify-center mt-8">
+          <button onclick="window.print()" class="inline-flex items-center justify-center font-semibold text-base px-8 py-4 rounded-xl btn-emerald text-white hover:scale-105 transition-all duration-300 emerald-glow shadow-xl no-print">
+            Download or Print Assessment
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assessment Content -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Instructions -->
+      <div class="bg-off-white rounded-3xl border border-emerald-500/20 p-8 mb-12">
+        <h2 class="font-bold text-2xl text-navy-900 mb-4">How to Use This Assessment</h2>
+        <ol class="space-y-3 text-slate-600">
+          <li class="flex items-start gap-3">
+            <span class="font-bold text-emerald-500 flex-shrink-0">1.</span>
+            <span>Rate each item on a scale: Not Started (0) → Partially (1) → Fully Implemented (2)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-bold text-emerald-500 flex-shrink-0">2.</span>
+            <span>Be honest. This is for your clarity—no judgment, shared data, or follow-up sales pitch required</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-bold text-emerald-500 flex-shrink-0">3.</span>
+            <span>Total your score at the end to find your readiness tier (see Scoring Guide)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="font-bold text-emerald-500 flex-shrink-0">4.</span>
+            <span>Take action or reach out if you'd like to discuss your results</span>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Category 1: Financial Systems & Data -->
+      <div class="assessment-card mb-12 page-break">
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">1</div>
+            <h3 class="font-bold text-2xl text-navy-900">Financial Systems & Data Infrastructure</h3>
+          </div>
+          <p class="text-slate-600 text-sm">Foundation: Do you have the data plumbing in place?</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Chart of Accounts & Standardized Bookkeeping</p>
+                <p class="text-sm text-slate-600 mt-1">Consistent account structure; transactions coded correctly for decision-making.</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q1" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q1" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q1" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Monthly Close Process & Timeline</p>
+                <p class="text-sm text-slate-600 mt-1">Can you close monthly books within 10-15 days with 99%+ accuracy?</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q2" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q2" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q2" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Accounting Software Integration</p>
+                <p class="text-sm text-slate-600 mt-1">POS, payroll, banking data flows into accounting automatically (no manual entry).</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q3" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q3" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q3" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Audit Trail & Reconciliation</p>
+                <p class="text-sm text-slate-600 mt-1">Bank/credit card reconciliation complete; GL accounts balanced monthly.</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q4" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q4" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q4" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: KPI & Visibility -->
+      <div class="assessment-card mb-12 page-break">
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">2</div>
+            <h3 class="font-bold text-2xl text-navy-900">KPI & Operational Visibility</h3>
+          </div>
+          <p class="text-slate-600 text-sm">Can you see what's actually happening in real time?</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Weekly KPI Dashboard</p>
+                <p class="text-sm text-slate-600 mt-1">Standardized dashboard showing revenue, cash, margins, multi-unit performance every week.</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q5" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q5" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q5" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Unit Economics by Location/Channel</p>
+                <p class="text-sm text-slate-600 mt-1">Revenue, margin, and profitability tracked separately for each location, SKU, or channel.</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q6" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q6" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q6" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Cash Flow Forecast (13-Week Rolling)</p>
+                <p class="text-sm text-slate-600 mt-1">Can you forecast cash on hand 13 weeks out? Is it updated weekly?</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q7" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q7" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q7" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Founder Engagement with Finance</p>
+                <p class="text-sm text-slate-600 mt-1">Does your founder/team actively use dashboards to make decisions weekly?</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q8" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q8" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q8" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 3: Capital & Investor Readiness -->
+      <div class="assessment-card mb-12 page-break">
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">3</div>
+            <h3 class="font-bold text-2xl text-navy-900">Capital & Investor Readiness</h3>
+          </div>
+          <p class="text-slate-600 text-sm">Would you pass diligence or confident in front of a lender?</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Audit-Ready Monthly Statements</p>
+                <p class="text-sm text-slate-600 mt-1">Income statement, balance sheet, cash flow—reviewed and certified monthly.</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q9" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q9" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q9" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">3-Year Financial Projections</p>
+                <p class="text-sm text-slate-600 mt-1">Credible revenue, EBITDA, and cash projections built on unit economics.</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q10" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q10" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q10" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Debt Covenant Compliance Tracking</p>
+                <p class="text-sm text-slate-600 mt-1">If you have debt, do you track and forecast covenant compliance monthly?</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q11" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q11" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q11" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Customer Acquisition Cost & Lifetime Value</p>
+                <p class="text-sm text-slate-600 mt-1">Can you articulate unit economics by customer cohort or membership type?</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q12" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q12" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q12" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 4: Team & Process -->
+      <div class="assessment-card mb-12 page-break">
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">4</div>
+            <h3 class="font-bold text-2xl text-navy-900">Team & Process Maturity</h3>
+          </div>
+          <p class="text-slate-600 text-sm">Is finance a discipline or still a bottleneck?</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Dedicated Finance Team or Owner</p>
+                <p class="text-sm text-slate-600 mt-1">Someone owns finance full-time (or fractional CFO/controller). Not ad-hoc.</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q13" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q13" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q13" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Monthly Finance Governance Cadence</p>
+                <p class="text-sm text-slate-600 mt-1">Leadership team reviews financials in a structured meeting at least monthly.</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q14" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q14" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q14" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Documented Finance Policies & Procedures</p>
+                <p class="text-sm text-slate-600 mt-1">Approval workflows, expense policies, account reconciliation procedures documented.</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q15" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q15" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q15" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+
+          <div class="assessment-item bg-white border border-slate-200 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-navy-900">Scenario Planning & Variance Analysis</p>
+                <p class="text-sm text-slate-600 mt-1">Do you regularly model "what if" scenarios and analyze why actual vs. budget variances occur?</p>
+              </div>
+              <div class="flex gap-2 no-print">
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q16" value="0" class="w-4 h-4"> <span class="text-sm">0</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q16" value="1" class="w-4 h-4"> <span class="text-sm">1</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="radio" name="q16" value="2" class="w-4 h-4"> <span class="text-sm">2</span>
+                </label>
+              </div>
+            </div>
+            <div class="print-only text-sm text-slate-600">Score: ___/2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scoring Guide -->
+      <div class="assessment-card bg-navy-900 text-white rounded-3xl p-8 mb-12">
+        <h2 class="font-bold text-2xl mb-6">Your Readiness Score</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white/10 rounded-2xl p-6 border border-white/20">
+            <p class="text-emerald-300 font-semibold text-sm mb-2">Your Total Score</p>
+            <div class="text-4xl font-bold" id="scoreDisplay">0 / 32</div>
+            <p class="text-slate-300 text-sm mt-2">Updates as you answer</p>
+          </div>
+          
+          <div class="bg-white/10 rounded-2xl p-6 border border-white/20">
+            <p class="text-emerald-300 font-semibold text-sm mb-2">Your Readiness Tier</p>
+            <div class="text-2xl font-bold" id="tierDisplay">Answer questions →</div>
+            <p class="text-slate-300 text-sm mt-2" id="tierSubtitle">See scoring guide</p>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div id="tier0" class="bg-red-500/20 border border-red-400/50 rounded-2xl p-4 opacity-50 transition-opacity">
+            <p class="font-bold text-red-200">0-8: Early Stage</p>
+            <p class="text-sm text-slate-300">Finance is a reactive function. You're capturing history, not driving decisions. Quick wins possible.</p>
+          </div>
+          
+          <div id="tier1" class="bg-yellow-500/20 border border-yellow-400/50 rounded-2xl p-4 opacity-50 transition-opacity">
+            <p class="font-bold text-yellow-200">9-16: Transitional</p>
+            <p class="text-sm text-slate-300">Some systems exist, but gaps prevent confident scaling. Founder still heavily involved.</p>
+          </div>
+          
+          <div id="tier2" class="bg-emerald-500/20 border border-emerald-400/50 rounded-2xl p-4 opacity-50 transition-opacity">
+            <p class="font-bold text-emerald-200">17-24: Mature Foundation</p>
+            <p class="text-sm text-slate-300">Core infrastructure works. You can scale, but refinement needed for complexity or capital events.</p>
+          </div>
+          
+          <div id="tier3" class="bg-blue-500/20 border border-blue-400/50 rounded-2xl p-4 opacity-50 transition-opacity">
+            <p class="font-bold text-blue-200">25-32: Investment Ready</p>
+            <p class="text-sm text-slate-300">Finance infrastructure supports rapid growth, external funding, or exit scenarios with confidence.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="assessment-card bg-off-white rounded-3xl border border-emerald-500/20 p-8 mb-12">
+        <h2 class="font-bold text-2xl text-navy-900 mb-6">What's Next?</h2>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <div>
+            <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold mb-3">1</div>
+            <p class="font-semibold text-navy-900 mb-2">Know Your Baseline</p>
+            <p class="text-sm text-slate-600">Your score shows where you stand right now, without judgment.</p>
+          </div>
+          
+          <div>
+            <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold mb-3">2</div>
+            <p class="font-semibold text-navy-900 mb-2">Identify Quick Wins</p>
+            <p class="text-sm text-slate-600">One or two items in each category can move the needle fast.</p>
+          </div>
+          
+          <div>
+            <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold mb-3">3</div>
+            <p class="font-semibold text-navy-900 mb-2">Take Action</p>
+            <p class="text-sm text-slate-600">Build yourself, hire help, or explore fractional CFO support.</p>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-slate-200">
+          <p class="text-slate-600 mb-6">Want to discuss your results or explore how Trinity 718 can help you move up a tier?</p>
+          <a href="contact.html" class="inline-flex items-center justify-center font-semibold text-base px-8 py-4 rounded-xl btn-emerald text-white hover:scale-105 transition-all duration-300 emerald-glow shadow-xl no-print">
+            Book a Discussion
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div data-include="footer.html"></div>
+  
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({duration: 1000, once: true, offset: 100});</script>
+  <script>
+    // CFO Assessment Scoring Logic
+    function calculateScore() {
+      let totalScore = 0;
+      
+      // Get all radio button groups (q1 through q16)
+      for (let i = 1; i <= 16; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selected) {
+          totalScore += parseInt(selected.value, 10);
+        }
+      }
+      
+      // Update score display
+      const scoreDisplay = document.getElementById('scoreDisplay');
+      const tierDisplay = document.getElementById('tierDisplay');
+      const tierSubtitle = document.getElementById('tierSubtitle');
+      
+      if (scoreDisplay) {
+        scoreDisplay.textContent = `${totalScore} / 32`;
+      }
+      
+      // Update tier display and highlight
+      let tier = '';
+      let tierNum = -1;
+      
+      if (totalScore >= 0 && totalScore <= 8) {
+        tier = '0-8: Early Stage';
+        tierNum = 0;
+      } else if (totalScore >= 9 && totalScore <= 16) {
+        tier = '9-16: Transitional';
+        tierNum = 1;
+      } else if (totalScore >= 17 && totalScore <= 24) {
+        tier = '17-24: Mature Foundation';
+        tierNum = 2;
+      } else if (totalScore >= 25 && totalScore <= 32) {
+        tier = '25-32: Investment Ready';
+        tierNum = 3;
+      }
+      
+      if (tierDisplay) {
+        tierDisplay.textContent = tier;
+      }
+      
+      if (tierSubtitle) {
+        tierSubtitle.textContent = 'Your current tier';
+      }
+      
+      // Highlight current tier, fade others
+      for (let i = 0; i <= 3; i++) {
+        const tierElement = document.getElementById(`tier${i}`);
+        if (tierElement) {
+          if (i === tierNum) {
+            tierElement.classList.remove('opacity-50');
+            tierElement.classList.add('opacity-100', 'ring-2', 'ring-offset-2');
+          } else {
+            tierElement.classList.add('opacity-50');
+            tierElement.classList.remove('opacity-100', 'ring-2', 'ring-offset-2');
+          }
+        }
+      }
+    }
+    
+    // Attach event listeners to all radio buttons
+    document.addEventListener('DOMContentLoaded', () => {
+      const radioButtons = document.querySelectorAll('input[type="radio"]');
+      radioButtons.forEach(radio => {
+        radio.addEventListener('change', calculateScore);
+      });
+      
+      // Initial calculation
+      calculateScore();
+    });
+    
+    // Include HTML partials
+    const includeTargets = Array.from(document.querySelectorAll('[data-include]'));
+    Promise.all(includeTargets.map(async (el) => {
+      const response = await fetch(el.getAttribute('data-include'));
+      el.outerHTML = await response.text();
+    })).then(() => {
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
